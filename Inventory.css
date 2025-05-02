@@ -1,0 +1,511 @@
+.inventory-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.inventory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header-left h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #1D1D1F;
+  margin: 0;
+}
+
+.header-left h2 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #86868B;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.pdf-button {
+  padding: 12px 24px;
+  background-color: #34C759;
+  color: white;
+  border: none;
+  border-radius: 980px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pdf-button:hover {
+  background-color: #32BE56;
+  transform: translateY(-1px);
+}
+
+.add-item-button {
+  padding: 12px 24px;
+  background-color: #0071E3;
+  color: white;
+  border: none;
+  border-radius: 980px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-item-button:hover {
+  background-color: #0077ED;
+  transform: translateY(-1px);
+}
+
+/* Search Bar */
+.search-bar {
+  margin-bottom: 24px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #D2D2D7;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #0071E3;
+  box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.1);
+}
+
+/* Inventory List */
+.inventory-list {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.list-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr 1fr;
+  padding: 16px 24px;
+  background-color: #F5F5F7;
+  border-bottom: 1px solid #D2D2D7;
+  font-weight: 600;
+  color: #1D1D1F;
+}
+
+.list-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr 1fr;
+  padding: 16px 24px;
+  border-bottom: 1px solid #D2D2D7;
+  align-items: center;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-button,
+.delete-button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edit-button {
+  background-color: #F5F5F7;
+  border: 1px solid #D2D2D7;
+  color: #1D1D1F;
+}
+
+.delete-button {
+  background-color: #FFE5E5;
+  border: 1px solid #FFD1D1;
+  color: #FF3B30;
+}
+
+.edit-button:hover {
+  background-color: #E5E5EA;
+}
+
+.delete-button:hover {
+  background-color: #FFD1D1;
+}
+
+.no-items {
+  padding: 48px 24px;
+  text-align: center;
+  color: #86868B;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.modal-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1D1D1F;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #86868B;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #1D1D1F;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #D2D2D7;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #0071E3;
+  box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.1);
+}
+
+.form-group input.error,
+.form-group select.error {
+  border-color: #FF3B30;
+  background-color: #FFF5F5;
+}
+
+.form-group input.error:focus,
+.form-group select.error:focus {
+  border-color: #FF3B30;
+  box-shadow: 0 0 0 2px rgba(255, 59, 48, 0.1);
+}
+
+.error-message {
+  color: #FF3B30;
+  font-size: 14px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.error-message::before {
+  content: "⚠️";
+  font-size: 12px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.form-actions button {
+  padding: 12px 24px;
+  border-radius: 980px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-actions button[type="button"] {
+  background-color: #F5F5F7;
+  border: 1px solid #D2D2D7;
+  color: #1D1D1F;
+}
+
+.form-actions button[type="submit"] {
+  background-color: #0071E3;
+  border: none;
+  color: white;
+}
+
+.form-actions button[type="button"]:hover {
+  background-color: #E5E5EA;
+}
+
+.form-actions button[type="submit"]:hover {
+  background-color: #0077ED;
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .inventory-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .header-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .pdf-button,
+  .add-item-button {
+    width: 100%;
+  }
+
+  .list-header,
+  .list-item {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  .list-header span:nth-child(4),
+  .list-header span:nth-child(5),
+  .list-item span:nth-child(4),
+  .list-item span:nth-child(5) {
+    display: none;
+  }
+
+  .item-actions {
+    position: absolute;
+    right: 24px;
+    opacity: 0.7;
+  }
+
+  .list-item {
+    position: relative;
+  }
+}
+
+@media (max-width: 480px) {
+  .list-header,
+  .list-item {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .list-header span:nth-child(3),
+  .list-item span:nth-child(3) {
+    display: none;
+  }
+}
+
+/* Stock Level Alerts */
+.stock-alerts {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stock-alert-header {
+  margin-bottom: 20px;
+}
+
+.stock-alert-header h3 {
+  color: #333;
+  margin: 0;
+}
+
+.stock-alert-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.stock-alert {
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.stock-alert h4 {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+}
+
+.stock-alert.low {
+  background-color: #FFF3F3;
+  border: 1px solid #FFE6E6;
+}
+
+.stock-alert.medium {
+  background-color: #FFF9F0;
+  border: 1px solid #FFE5C0;
+}
+
+.stock-alert.sufficient {
+  background-color: #F0FFF4;
+  border: 1px solid #C6F6D5;
+}
+
+.alert-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.alert-item {
+  padding: 8px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.no-alert-items {
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Stock Level Indicators in List */
+.list-item.stock-low {
+  background-color: #FFF3F3;
+}
+
+.list-item.stock-medium {
+  background-color: #FFF9F0;
+}
+
+.list-item.stock-sufficient {
+  background-color: #F0FFF4;
+}
+
+/* Hover effects */
+.list-item.stock-low:hover {
+  background-color: #FFE6E6;
+}
+
+.list-item.stock-medium:hover {
+  background-color: #FFE5C0;
+}
+
+.list-item.stock-sufficient:hover {
+  background-color: #C6F6D5;
+}
+
+/* PDF Styles */
+.pdf-content {
+  position: fixed;
+  left: -9999px;
+  top: 0;
+  padding: 40px;
+  width: 210mm; /* A4 width */
+  background-color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.pdf-header {
+  text-align: center;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 20px;
+}
+
+.pdf-header h1 {
+  font-size: 28px;
+  margin: 0 0 8px 0;
+  color: #000;
+}
+
+.pdf-header h2 {
+  font-size: 20px;
+  font-weight: normal;
+  margin: 0 0 16px 0;
+  color: #000;
+}
+
+.pdf-header p {
+  font-size: 14px;
+  margin: 0;
+  color: #000;
+}
+
+.pdf-inventory-table {
+  width: 100%;
+}
+
+.pdf-inventory-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.pdf-inventory-table th,
+.pdf-inventory-table td {
+  border: 1px solid #000;
+  padding: 12px;
+  text-align: left;
+  color: #000;
+}
+
+.pdf-inventory-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.pdf-inventory-table tr:nth-child(even) {
+  background-color: #fafafa;
+} 

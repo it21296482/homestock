@@ -1,0 +1,189 @@
+/* Reset and base styling */
+body {
+  margin: 0;
+  padding: 0;
+  background: #F5F5F7;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #1D1D1F;
+  transition: background 0.5s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Fade-in animation on page load */
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* MUI Paper (card) enhancements */
+.MuiPaper-root {
+  background-color: #FFFFFF !important;
+  backdrop-filter: blur(10px);
+  border-radius: 18px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+  transition: 0.3s ease;
+}
+
+/* Text fields */
+.MuiTextField-root {
+  background-color: white;
+  border-radius: 12px;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 12px !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: #D2D2D7 !important;
+}
+
+.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #86868B !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #0071E3 !important;
+}
+
+/* Buttons */
+.MuiButton-contained,
+.MuiButton-outlined {
+  text-transform: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 980px;
+  transition: 0.3s ease;
+}
+
+.MuiButton-contained {
+  background-color: #0071E3 !important;
+  box-shadow: none !important;
+}
+
+.MuiButton-contained:hover {
+  background-color: #0077ED !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3) !important;
+}
+
+.MuiButton-outlined {
+  border-color: #0071E3 !important;
+  color: #0071E3 !important;
+}
+
+.MuiButton-outlined:hover {
+  background-color: rgba(0, 113, 227, 0.05) !important;
+  transform: translateY(-2px);
+}
+
+/* Typography: headings & links */
+h1, h2, h3, h4, h5, h6, 
+.MuiTypography-h1, .MuiTypography-h2, .MuiTypography-h3, 
+.MuiTypography-h4, .MuiTypography-h5, .MuiTypography-h6 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.MuiLink-root {
+  color: #0071E3;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: 0.3s ease;
+}
+
+.MuiLink-root:hover {
+  color: #0077ED;
+  text-decoration: none;
+}
+
+/* Avatar + Profile section enhancements */
+.avatar-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.avatar-card .MuiAvatar-root {
+  width: 64px;
+  height: 64px;
+  margin-right: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Avatar Upload Enhancements */
+.avatar-upload {
+  margin-bottom: 1.5rem;
+}
+
+.avatar-upload .MuiIconButton-root {
+  background-color: #F5F5F7;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+.avatar-upload .MuiIconButton-root:hover {
+  background-color: #E5E5EA;
+}
+
+/* Form elements */
+.MuiFormLabel-root.Mui-focused {
+  color: #0071E3 !important;
+}
+
+.MuiCheckbox-root.Mui-checked {
+  color: #0071E3 !important;
+}
+
+.MuiRadio-root.Mui-checked {
+  color: #0071E3 !important;
+}
+
+.MuiSwitch-root.Mui-checked {
+  color: #0071E3 !important;
+}
+
+.MuiSwitch-root.Mui-checked + .MuiSwitch-track {
+  background-color: #0071E3 !important;
+}
+
+/* Responsive tweaks */
+@media (max-width: 960px) {
+  .MuiContainer-root {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .MuiContainer-root {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  
+  h1, .MuiTypography-h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2, .MuiTypography-h2 {
+    font-size: 1.75rem !important;
+  }
+  
+  h3, .MuiTypography-h3 {
+    font-size: 1.5rem !important;
+  }
+}
